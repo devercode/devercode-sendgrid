@@ -1,6 +1,6 @@
-# TITLE
+# Devercode-Sendgrid
 
-description
+Another helpful module for send mail with sendgrid
 
 ## Authors
 
@@ -9,24 +9,54 @@ description
 ## Installation
 
 ```bash
-  npm install devercode-logger
-  yarn add devercode-logger
+  npm install devercode-sendgrid
+  yarn add devercode-sendgrid
 ```
-
-## Demo
-
-![alt demo](https://user-images.githubusercontent.com/85423098/122147465-27480100-ce83-11eb-8383-19efeda5e5f4.png)
 
 ## Features
 
-- Feature 1
+- Sendgrid support
+- MJML and Handlebars support
 
 ## Usage
 
-- Simple log
+- Send mail with html
 
 ```javascript
-code code code
+import { createClient } from "~@/index";
+const client = createClient({
+  apiKey: "SG.key",
+});
+client.send({
+  from: "support@example.com",
+  to: "any@example.com",
+  html: `
+      <h1>Hello world</h1>
+    `,
+  subject: "Testing",
+});
+```
+
+- Send mail with mjml
+
+```javascript
+import { createClient } from "~@/index";
+const client = createClient({
+  apiKey: "SG.key",
+});
+client
+  .sendWithMjml({
+    path: path.join(__dirname, "../__fixtures__/template.mjml"),
+    from: "help@thebugbunny.com",
+    meta: {
+      name: "thinh",
+    },
+    subject: "Test Message",
+    to: "deverpham@gmail.com",
+  })
+  .catch((err) => {
+    console.log(err.response.body);
+  });
 ```
 
 ## License

@@ -1,13 +1,16 @@
 {
-  "name": "npm-package-builder",
+  "name": "devercode-sendgrid",
   "private": false,
   "main": "dist/index.js",
   "version": "1.0.0",
-  "description": "NPM package builder starter",
+  "description": "Another helpful module for send mail with sendgrid",
   "scripts": {
     "dev": "nodemon",
     "build": "tsc -p tsconfig.json",
     "test": "jest"
+  },
+  "repository": {
+    "url": "https://github.com/devercode/devercode-sendgrid"
   },
   "husky": {
     "hooks": {
@@ -16,13 +19,8 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.5",
-    "chalk": "^4.1.1",
-    "error-stack-parser": "^2.0.6",
     "handlebars": "^4.7.7",
-    "mjml": "^4.9.3",
-    "moment": "^2.29.1",
-    "winston": "^3.3.3",
-    "winston-transport-sentry-node": "^1.0.2"
+    "mjml": "^4.9.3"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
@@ -33,6 +31,11 @@
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.2"
   },
+  "keywords": [
+    "sendgrid",
+    "mjml",
+    "mail"
+  ],
   "_moduleAliases": {
     "~@": "./dist"
   }

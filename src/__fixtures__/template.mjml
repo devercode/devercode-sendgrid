@@ -18,7 +18,7 @@
   <mj-body>
     <mj-section>
       <mj-column>
-        <mj-text css-class="red-text">I'm red and underlined</mj-text>
+        <mj-text css-class="red-text">{{name}}</mj-text>
         <mj-text css-class="blue-text">I'm blue because of inline</mj-text>
         <mj-text mj-class="mjclass">I'm green</mj-text>
       </mj-column>
